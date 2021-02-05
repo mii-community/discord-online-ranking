@@ -1,5 +1,7 @@
 discord.py
 python-dotenv
+pymongo
+dnspython
 
 pylint==2.6.0
 black==20.8b1
