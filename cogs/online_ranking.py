@@ -119,7 +119,6 @@ class OnlineRanking(Cog):
 
     @send_ranking.before_loop
     async def before_send_ranking(self):
-        print("waiting...")
         await self.bot.wait_until_ready()
         self.guild = self.bot.get_guild(const.GUILD_ID)
 
