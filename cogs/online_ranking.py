@@ -1,4 +1,4 @@
-from datetime import date, datetime, timezone
+from datetime import datetime, timezone
 from textwrap import dedent
 
 import const
@@ -110,7 +110,10 @@ class OnlineRanking(Cog):
             if len(content) >= 1920:
                 break
         online_ranking = self.bot.get_channel(const.CH_ONLINE_RANKING)
-        embed = Embed(title=f"{date.today()} のオンライン時間ランキング", description=content)
+        embed = Embed(
+            title=f"{datetime.now(timezone.utc).strftime('%Y年%m月%d日')} のオンライン時間ランキング",
+            description=content,
+        )
         await online_ranking.send(embed=embed)
         self.update_db()
 
